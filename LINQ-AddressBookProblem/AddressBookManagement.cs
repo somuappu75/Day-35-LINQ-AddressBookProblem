@@ -125,7 +125,7 @@ namespace LINQ_AddressBookProblem
         }
 
         // Prints the data.
-        public void PrintData(IEnumerable<DataRow> dataRow)
+        public void PrintData(DataTable dataRow)
         {
             foreach (var data in dataRow)
             {
