@@ -28,7 +28,7 @@ namespace LINQ_AddressBookProblem
         
         public DataTable DeletingContactFromTable(DataTable datatable)
         {
-
+            //Uc-5 Delete from table
             //returning the new data table
             //saving them in new data table by copytodatatable method
             DataTable dataTableupdated = datatable.AsEnumerable().Except(datatable.AsEnumerable().Where(r => r.Field<string>("firstName") == "Gouri" && r.Field<string>("lastName") == "Shete")).CopyToDataTable();
@@ -47,7 +47,7 @@ namespace LINQ_AddressBookProblem
             return dataTableupdated;
         }
         /// <summary>
-        /// Retrievings the contact details by state or city. UC6
+        /// UC-6  Retrievings the contact details by state or city.
         /// </summary>
         /// <param name="dataTable">The data table.</param>
         public void RetrievingContactDetailsByStateOrCity(DataTable dataTable)
@@ -70,51 +70,14 @@ namespace LINQ_AddressBookProblem
             }
 
         }
+
+        }
+      
        
-        public void GetCountByCityAndState(DataTable datatable)
-        {
-            //getting count for particular state or city
-            var recordData = datatable.AsEnumerable().Where(r => r.Field<string>("city") == "Mumbai" && r.Field<string>("state") == "Maharashtra").Count();
-            //grouping data by city and state
-            var recordedData = from data in datatable.AsEnumerable()
-                               group data by new { city = data.Field<string>("city"), state = data.Field<string>("state") } into g
-                               select new { city = g.Key, count = g.Count() };
-            //displaying data for particular city or state
-            Console.WriteLine(recordData);
-            //displaying total grouped data
-            foreach (var data in recordedData.AsEnumerable())
-            {
-                Console.WriteLine("city:- " + data.city.city);
-                Console.WriteLine("state:- " + data.city.state);
-                Console.WriteLine("lastName:- " + data.count);
-                Console.WriteLine("*******************");
-
-            }
-
-        }
-        /// <summary>
-        /// Gets the name of the sorted data based on person. UC8
-        /// </summary>
-        /// <param name="datatable">The datatable.</param>
-        public void GetSortedDataBasedOnPersonName(DataTable datatable)
-        {
-            //linq query on lambda syntax
-            var recordData = datatable.AsEnumerable().Where(r => r.Field<string>("city") == "Mumbai").OrderBy(r => r.Field<string>("firstName")).ThenBy(r => r.Field<string>("lastName"));
-            foreach (var data in recordData)
-            {
-                Console.WriteLine("FirstName:- " + data.Field<string>("firstName"));
-                Console.WriteLine("lastName:- " + data.Field<string>("lastName"));
-                Console.WriteLine("Address:- " + data.Field<string>("address"));
-                Console.WriteLine("City:- " + data.Field<string>("city"));
-                Console.WriteLine("State:- " + data.Field<string>("state"));
-                Console.WriteLine("zip:- " + Convert.ToInt32(data.Field<int>("zip")));
-                Console.WriteLine("phoneNumber:- " + Convert.ToDouble(data.Field<Double>("phoneNumber")));
-                Console.WriteLine("eMail:- " + data.Field<string>("eMail"));
-                Console.WriteLine("----------------------------");
-            }
-        }
+ }
 
 
-        }
-    }
+
+      
+    
 

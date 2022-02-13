@@ -73,12 +73,15 @@ namespace LINQ_AddressBookProblem
             addressBookTable.Rows.Add("Vidya", "Balgi", "banahatti", "Mumbai", "Maharashtra", 143256, 9731390823, "vidya.balgi");
 
             AddressBookManagement addressBookManagement = new AddressBookManagement();
-            ////UC4 upadating de
-            //addressBookTable = addressBookManagement.UpdatedContactDetails(addressBookTable);
-            //var book = addressBookTable.AsEnumerable().Select(r => r.Field<string>("state"));
-            AddressBookManagement addressBookManagement2 = new AddressBookManagement();
-            //deleting contacts from address book table UC5
-            addressBookTable = addressBookManagement.DeletingContactFromTable(addressBookTable);
+            //////UC4 upadating data
+            ////addressBookTable = addressBookManagement.UpdatedContactDetails(addressBookTable);
+            ////var book = addressBookTable.AsEnumerable().Select(r => r.Field<string>("state"));
+            //AddressBookManagement addressBookManagement2 = new AddressBookManagement();
+
+            ////deleting contacts from address book table UC5
+            //addressBookTable = addressBookManagement.DeletingContactFromTable(addressBookTable);
+            //UC6
+            addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
             Console.WriteLine("-------------Total data-----------------");
             //foreach (var data in addressBookTable.AsEnumerable())
             //{
