@@ -89,11 +89,14 @@ namespace LINQ_AddressBookProblem
             //UC8
             addressBookManagement.GetSortedDataBasedOnPersonName(addressBookTable);
             //UC-9
-            var book = addressBookTable.AsEnumerable().Select(r => r.Field<string>("firstName"));
-            foreach (string element in book)
-            {
-                Console.WriteLine(element);
-            }
+            //var book = addressBookTable.AsEnumerable().Select(r => r.Field<string>("firstName"));
+            //foreach (string element in book)
+            //{
+            //    Console.WriteLine(element);
+            //}
+
+            //UC10
+            addressBookManagement.GetCountByType(addressBookTable);
 
             //foreach (var data in addressBookTable.AsEnumerable())
             //{
