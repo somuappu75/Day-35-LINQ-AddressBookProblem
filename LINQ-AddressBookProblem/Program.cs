@@ -61,6 +61,14 @@ namespace LINQ_AddressBookProblem
             PrimaryKeyColumns[0] = addressBookTable.Columns["firstName"];
             PrimaryKeyColumns[1] = addressBookTable.Columns["phoneNumber"];
             addressBookTable.PrimaryKey = PrimaryKeyColumns;
+
+            //UC-3 INsering values to table
+            addressBookTable.Rows.Add("chetan", "koparde", "Rampur", "Hosur", "Karnataka", 591317, 9980143256, "Chetan65@");
+            addressBookTable.Rows.Add("Akshay", "Poojari", "Sasalatti", "Bangalore", "Karnataka", 123456, 9740049061, "akshay.a");
+            addressBookTable.Rows.Add("Gouri", "Shete", "banahatti", "Mumbai", "Maharashtra", 856932, 9845623514, "gouri$3@gmail.com");
+            addressBookTable.Rows.Add("Somu", "Havinal", "rabakavi", "Kalyan", "Haryana", 136119, 9591235869, "somusp75@gmail.com");
+            addressBookTable.Rows.Add("Praveen", "Ainapur", "mudhol", "Delhi", "Delhi", 121435, 9876543210, "praveen.ainapur");
+            addressBookTable.Rows.Add("Vidya", "Balgi", "banahatti", "Mumbai", "Maharashtra", 143256, 9731390823, "vidya.balgi");
         }
     }
 }
