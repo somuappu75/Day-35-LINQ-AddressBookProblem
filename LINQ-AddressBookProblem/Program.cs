@@ -83,7 +83,8 @@ namespace LINQ_AddressBookProblem
                 Console.WriteLine("Please press 5 for getting sorted data based on person name for particular city");
                 Console.WriteLine("Please press 6 for getting count by type ");
                 Console.WriteLine("press any  to exit");
-                Console.WriteLine("Er Daigram FOr Addesbook");
+                Console.WriteLine("7.Er Daigram FOr Addesbook");
+                Console.WriteLine(" Press 8---.UC-6 7 8 10 newtable structure");
                 string options = Console.ReadLine();
                 switch (options)
                 {
@@ -137,6 +138,16 @@ namespace LINQ_AddressBookProblem
                         // addressBookManagement.PrintData();
                         addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
 
+                        break;
+                    case "8":
+                        //uc6
+                        addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
+                        //uc7
+                        addressBookManagement.GetCountByCityAndState(addressBookTable);
+                        //uc8
+                        addressBookManagement.GetSortedDataBasedOnPersonName(addressBookTable);
+                        //uc10
+                        addressBookManagement.GetCountByType(addressBookTable);
                         break;
                     default:
                         Environment.Exit(0);
