@@ -83,8 +83,12 @@ namespace LINQ_AddressBookProblem
             //UC6
             //addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
 
-            //UC7
-            addressBookManagement.GetCountByCityAndState(addressBookTable);
+            ////UC7
+            //addressBookManagement.GetCountByCityAndState(addressBookTable);
+
+            //UC8
+            addressBookManagement.GetSortedDataBasedOnPersonName(addressBookTable);
+
             Console.WriteLine("-------------Total data-----------------");
             //foreach (var data in addressBookTable.AsEnumerable())
             //{
