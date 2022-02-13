@@ -81,7 +81,10 @@ namespace LINQ_AddressBookProblem
             ////deleting contacts from address book table UC5
             //addressBookTable = addressBookManagement.DeletingContactFromTable(addressBookTable);
             //UC6
-            addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
+            //addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
+
+            //UC7
+            addressBookManagement.GetCountByCityAndState(addressBookTable);
             Console.WriteLine("-------------Total data-----------------");
             //foreach (var data in addressBookTable.AsEnumerable())
             //{
