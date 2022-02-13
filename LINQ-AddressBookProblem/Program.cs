@@ -7,7 +7,9 @@ namespace LINQ_AddressBookProblem
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("--------------------------------------------------------------------------------------");
             Console.WriteLine("Welcome To Address Book Problem Using Linq");
+            Console.WriteLine("--------------------------------------------------------------------------------------");
 
             //UC_1 Creating data table
             DataTable addressBookTable = new DataTable();
@@ -69,6 +71,24 @@ namespace LINQ_AddressBookProblem
             addressBookTable.Rows.Add("Somu", "Havinal", "rabakavi", "Kalyan", "Haryana", 136119, 9591235869, "somusp75@gmail.com");
             addressBookTable.Rows.Add("Praveen", "Ainapur", "mudhol", "Delhi", "Delhi", 121435, 9876543210, "praveen.ainapur");
             addressBookTable.Rows.Add("Vidya", "Balgi", "banahatti", "Mumbai", "Maharashtra", 143256, 9731390823, "vidya.balgi");
+
+            AddressBookManagement addressBookManagement = new AddressBookManagement();
+            //UC4 upadating de
+            addressBookTable = addressBookManagement.UpdatedContactDetails(addressBookTable);
+            //var book = addressBookTable.AsEnumerable().Select(r => r.Field<string>("state"));
+            Console.WriteLine("-------------Total data-----------------");
+            foreach (var data in addressBookTable.AsEnumerable())
+            {
+                Console.WriteLine("FirstName:- " + data.Field<string>("firstName"));
+                Console.WriteLine("lastName:- " + data.Field<string>("lastName"));
+                Console.WriteLine("Address:- " + data.Field<string>("address"));
+                Console.WriteLine("City:- " + data.Field<string>("city"));
+                Console.WriteLine("State:- " + data.Field<string>("state"));
+                Console.WriteLine("zip:- " + Convert.ToInt32(data.Field<int>("zip")));
+                Console.WriteLine("phoneNumber:- " + Convert.ToDouble(data.Field<Double>("phoneNumber")));
+                Console.WriteLine("eMail:- " + data.Field<string>("eMail"));
+                Console.WriteLine("------------------------------------\n");
+            }
         }
     }
 }
